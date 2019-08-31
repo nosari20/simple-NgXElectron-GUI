@@ -1,0 +1,60 @@
+{
+  "name": "Window",
+  "version": "0.0.0",
+  "main": "./electron/main.js",
+  "scripts": {
+    "preinstall" :"npm rebuild node-sass",
+    "ng": "ng",
+    "start": "ng build --base-href && electron .",
+    "build": "electron:win-build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "electron": "ng build --base-href && electron .",
+    "electron:win-build": "ng build --base-href --prod && electron-packager . Apk_Analyzer  --icon=src/favicon.ico --overwrite --asar --platform=win32 --arch=ia32 --prune=true --out=electron/build/prod"
+  },
+  "private": false,
+  "dependencies": {
+    "@angular/animations": "^7.2.15",
+    "@angular/common": "^7.2.15",
+    "@angular/compiler": "^7.2.15",
+    "@angular/core": "^7.2.15",
+    "@angular/forms": "^7.2.15",
+    "@angular/platform-browser": "^7.2.15",
+    "@angular/platform-browser-dynamic": "^7.2.15",
+    "@angular/router": "^7.2.15",
+    "ngx-electron": "^2.1.1",
+    "zone.js": "^0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.12.4",
+    "@angular/cli": "^7.3.9",
+    "@angular/compiler-cli": "^7.2.15",
+    "@angular/language-service": "^7.2.15",
+    "@types/jasmine": "~2.8.8",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "codelyzer": "~4.5.0",
+    "electron": "^4.2.10",
+    "electron-packager": "^13.1.1",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~3.1.1",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "^2.1.0",
+    "karma-jasmine": "~1.1.2",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.4.0",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.11.0",
+    "typescript": "~3.2.2"
+  },
+  "build": {
+    "appId": "Apk_Analyzer",
+    "category": "Application",
+    "win": {
+      "target": "squirrel",
+      "icon": "src/icon.png"
+    }
+  }
+}
